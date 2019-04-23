@@ -1,0 +1,52 @@
+Problem:https://www.codechef.com/status/DANOW
+
+It get solved easily with C, but with C++ results are eerie!
+
+
+C++
+#include<bits/stdc++.h>
+using namespace std;
+int A[100000], B[100000];
+int main(){
+    int N, Q, L, R, i;
+    cin>>N>>Q;
+    for(i=0; i<N; i++){
+       cin>>A[i];
+       cin>>B[i];
+       }
+    while(Q--){//for(int i=0; i<Q; i++)
+    cin>>L>>R;
+    int sum=0;
+    for(i=L-1; i<R; i++)
+       sum+=A[i]*B[i];
+    cout<<sum<<endl;
+   }
+}
+
+C
+#include <stdio.h>
+
+int main() {
+    long int n,q;
+    long int l,r,i;
+    scanf("%ld",&n);
+    scanf("%ld",&q);
+	long long int a[n],b[n],sum;
+	
+	for (i=0;i<n;i++){
+	    scanf("%lld",&a[i]);
+	}
+	for (i=0;i<n;i++){
+	    scanf("%lld",&b[i]);
+	}
+	while(q--){
+	    scanf("%ld",&l);
+	    scanf("%ld",&r);
+	    sum=0;
+	    for(i=l-1;i<r;i++){
+	       sum+=a[i]*b[i];
+	    }
+	printf("%lld\n",sum);
+	}
+	return 0;
+}
